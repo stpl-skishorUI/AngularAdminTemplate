@@ -11,6 +11,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { PartialLayoutRoutes } from './partial-layout.routing';
 import { MaterialModule } from 'src/app/shared/angularMaterialModule/material.module';
 
+
+
+
+
 @NgModule({
   declarations: [
   ],
@@ -26,6 +30,6 @@ import { MaterialModule } from 'src/app/shared/angularMaterialModule/material.mo
     MatTooltipModule,
     MatSelectModule,
     MaterialModule
-  ]
+  ]  
 })
 export class PartialLayoutModule { }

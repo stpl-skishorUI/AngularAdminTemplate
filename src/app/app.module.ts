@@ -12,6 +12,14 @@ import { FooterComponent } from './partial/partial-layout/footer/footer.componen
 import { HeaderComponent } from './partial/partial-layout/header/header.component';
 import { SidebarComponent } from './partial/partial-layout/sidebar/sidebar.component';
 import { MaterialModule } from './shared/angularMaterialModule/material.module';
+
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +35,13 @@ import { MaterialModule } from './shared/angularMaterialModule/material.module';
     MaterialModule,
     FormsModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PerfectScrollbarModule
   ],
-  providers: [],
+  providers: [ {
+    provide: PERFECT_SCROLLBAR_CONFIG,
+    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
